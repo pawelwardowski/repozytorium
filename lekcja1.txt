@@ -1,0 +1,19 @@
+CREATE TABLE postac(id_postaci INT AUTO_INCREMENT PRIMARY KEY,
+nazwa VARCHAR(40) NOT NULL,
+ rodzaj ENUM('wiking', 'ptak', 'kobieta'),
+ data_ur DATE,
+wiek int UNSIGNED);
+ INSERT INTO postac (nazwa) VALUES('Drozd');
+INSERT INTO postac (nazwa) VALUES ('Tesciowa');
+INSERT INTO postac (nazwa) VALUES ('Bjorn');
+SHOW CREATE TABLE postac;
+SELECT nazwa FROM postac;
+ALTER TABLE postac
+ALTER nazwa SET DEFAULT 0.0;
+INSERT INTO postac (data_ur) VALUES ('1999-01-01')
+INSERT INTO postac (data_ur) VALUES ('1980-01-01')
+INSERT INTO postac (data_ur) VALUES ('2000-01-01');
+INSERT INTO postac (wiek) VALUES (30);
+INSERT INTO postac (wiek) VALUES (31);
+INSERT INTO postac (wiek) VALUES (88);
+ SELECT nazwa, data_ur, wiek FROM postac;
