@@ -1,0 +1,43 @@
+	CREATE TABLE walizka (id_walizka INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	pojemnosc int UNSIGNED,
+	kolor ENUM('rozowy', 'czerwony', 'teczowy', 'zolty'),
+	CONSTRAINT id_wlasciciela FOREIGN KEY  REFERENCES 'postac' ON DELETE CASCADE);
+
+ALTER TABLE 'walizka'
+ALTER [COLUMN] 'kolor'
+SET DEFAULT 'rozowy';
+select postac, Bjorn from postac
+UNION 
+SELECT walizka from walizka
+GO
+
+CREATE TABLE izba (adres_budynku VARCHAR(40) NOT NULL PRIMARY KEY,
+nazwa_izby VARCHAR(40) NOT NULL PRIMARY KEY,
+metraz UNSIGNED;
+wlasciciel FOREIGN KEY REFERENCES 'postac')
+
+ALTER TABLE izba ADD kolor VARCHAR(40) DEFAULT czarny
+
+INSERT INTO nazwa_izby VALUES ('spizarnia')
+
+CREATE TABLE przetwory (id_przetworu INT PRIMARY KEY NOT NULL,
+rok_produkcji YEAR DEFAULT 1654
+id_wykonawcy FOREIGN KEY REFERENCES 'postac'
+zawartosc VARCHAR(50)
+dodatek VARCHAR(50) DEFAULT papryczka chilli
+id_konsumenta FOREIGN KEY REFERENCES 'postac'
+
+INSERT INTO przetwory VALUES ('bigos z papryczka chilli')
+
+INSERT INTO postac VALUES ('Hyzio', 'Dyzio', 'Zyzio', 'Mietek', 'Eniu')
+
+CREATE TABLE statek (nazwa_statku VARCHAR(40) PRIMARY KEY NOT NULL,
+rodzaj_statku ENUM,
+data_wodowania DATE,
+max_ladownosc UNSIGNED
+
+INSERT INTO statek VALUES ('statek1', 'statek2')
+ALTER TABLE postac ADD funkcja VARCHAR(50);
+
+INSERT INTO postac (funkcja) VALUES ('kapitan')
+
