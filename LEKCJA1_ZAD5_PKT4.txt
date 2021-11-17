@@ -1,0 +1,32 @@
+CREATE TABLE statek (
+    nazwa_statku VARCHAR(50) PRIMARY KEY,
+    rodzaj_statku ENUM('piracki', 'rybny', 'prom'),
+    data_wodowania DATE,
+    max_ladownosc INT UNSIGNED
+    );
+ ALTER TABLE postac ADD funkcja VARCHAR(50);
+ INSERT INTO postac(funkcja, nazwa) VALUES ('kapitan', 'Bjorn');
+
+
+INSERT INTO statek(nazwa_statku) VALUES ('statek2');
+INSERT INTO statek(nazwa_statku) VALUES ('statek1');
+INSERT INTO postac(nazwa, rodzaj) VALUES ('JAN GLIN','Wiking');
+INSERT INTO postac(nazwa, rodzaj) VALUES ('Siema eniu Xd','Wiking');
+INSERT INTO postac(nazwa, rodzaj) VALUES ('Heniu','Wiking');
+INSERT INTO postac(nazwa, rodzaj) VALUES ('Eniu','Wiking');
+ INSERT INTO postac(nazwa, rodzaj) VALUES ('Mietek','Wiking');
+
+ALTER TABLE przetwory ADD CONSTRAINT fk_przetwory2 FOREIGN KEY (id_konsumenta) REFERENCES postac(id_postaci);
+ ALTER TABLE przetwory ADD CONSTRAINT fk_przetwory1 FOREIGN KEY (id_wykonawcy) REFERENCES postac(id_postaci);
+INSERT INTO przetwory (przetwor) VALUES ('bigos');
+ALTER TABLE przetwory ADD przetwor VARCHAR(50);
+ ALTER TABLE przetwory MODIFY rok_produkcji YEAR DEFAULT  '1954';
+CREATE TABLE przetwory (id_przetworu INT PRIMARY KEY, rok_produkcji INT DEFAULT '1654', id_wykonawcy INT NOT NULL, zawartosc VARCHAR(50), dodatek VARCHAR(50) DEFAULT 'papryczka chilli', id_konsumenta INT);
+
+
+
+
+
+
+
+
