@@ -1,0 +1,13 @@
+update postac set id_postaci = 20 where rodzaj = 'syrena';
+insert into postac (nazwa,rodzaj) values ('Gertruda Nieszczera','syrena');
+
+alter table postac alter pesel set default 99999999999;
+alter table postac modify column id_postaci int;
+alter table postac add primary key (pesel);
+
+update postac set pesel ='12345678914' where id_postaci = 14;
+alter table postac add pesel varchar(11) NOT NULL;
+ alter table postac drop primary key;
+alter table postac modify id_postaci int not null;
+ alter table przetwory drop constraint fk_przetwory2;
+alter table izba drop constraint izba_ibfk_1;
