@@ -1,0 +1,1 @@
+ALTER TABLE postac ADD CONSTRAINT fk_postac FOREIGN KEY (id_postaci) REFERENCES statek(id_statku);
