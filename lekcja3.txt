@@ -1,0 +1,29 @@
+select nazwa,waga from zasob where waga between 2 and 5;
+select nazwa,rodzaj from kreatura where not rodzaj = 'wiedzma' and udzwig>50;
+select nazwa from kreatura where not rodzaj = 'wiedzma' and udzwig>50;
+ select idZasobu,ilosc from zasob where idZasobu = 1 or idZasobu = 3 or idZasobu = 5;
+select * from zasob where rodzaj = 'jedzenie';
+create table wardowskip.kreatura like wikingowie.kreatura;
+ create table wardowskip.zasob like wikingowie.zasob;
+create table wardowskip.ekwipunek like wikingowie.ekwipunek;
+> insert wardowskip.kreatura select * from wikingowie.kreatura;
+insert wardowskip.zasob select * from wikingowie.zasob;
+insert wardowskip.ekwipunek select * from wikingowie.ekwipunek;
+select nazwa,rodzaj,waga from zasob order by waga asc;
+select nazwa,dataPozyskania from zasob where dataPozyskania like '%07%' or dataPozyskania like '%08%';
+select nazwa,udzwig from kreatura where nazwa like '%or%' and udzwig between 30 and 70;
+select nazwa,dataUr from kreatura order by dataUr asc limit 5;
+ select nazwa,rodzaj from zasob where rodzaj is not null;
+select distinct (rodzaj) from zasob;
+select concat (nazwa,'-',rodzaj) as 'nazwa-rodzaj' from kreatura where rodzaj like 'wi%';
+select concat (nazwa,'-',ilosc) as 'calkowita waga'from zasob where year(dataPozyskania) between 2000 and 2007;
+select concat(nazwa,' ',waga*1.30) as 'wlasciwa_masa' from zasob;
+select distinct(rodzaj),nazwa from zasob where nazwa like 'Ba%' or nazwa like '%os' order by nazwa asc;
+
+
+select rodzaj,nazwa from zasob where rodzaj is null;
+
+
+
+ 
+
