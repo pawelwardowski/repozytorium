@@ -1,0 +1,9 @@
+ select nazwa,rodzaj from zasob where nazwa like 'Ba%' or nazwa like '%os' order by nazwa asc;
+select avg(waga) as 'srednia_waga' from kreatura where rodzaj = 'wiking';
+ select avg(waga) as 'waga', count(rodzaj) as 'liczba_kreatur' from kreatura;
+select avg(year(dataUr)) as 'wiek' from kreatura;
+
+select sum(waga) as 'waga_jedzenie' where rodzaj = 'jedzenie',
+sum(waga) as 'waga_narzedzie' where rodzaj like '%narzedzie%' from zasob
+
+
