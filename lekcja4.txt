@@ -1,0 +1,5 @@
+select sum(waga),rodzaj from  zasob group by rodzaj;
+ select avg(waga), nazwa from zasob where ilosc >=4  group by nazwa having sum(waga)>10;
+select count(nazwa), rodzaj from zasob group by rodzaj having min(ilosc)>1;
+select ilosc,idEkwipunku,ekwipunek.idKreatury from ekwipunek join kreatura on ekwipunek.idKreatury
+= kreatura.idKreatury;
