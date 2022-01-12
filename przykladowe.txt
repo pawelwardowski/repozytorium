@@ -1,0 +1,10 @@
+
+CREATE TABLE Promotor(PESEL VARCHAR(11) NOT NULL PRIMARY KEY,
+    tytul ENUM('mgr','dr','prof.') DEFAULT 'prof.',
+    imie VARCHAR(11) NOT NULL,
+    nazwisko VARCHAR(11) NOT NULL,
+    zarobki FLOAT(7,2) UNSIGNED DEFAULT '2000.00' ,
+   dataur DATE);
+
+
+ CREATE TABLE praca (promotor, nrindeksu TEXT(6), tytulpracy LONGTEXT
