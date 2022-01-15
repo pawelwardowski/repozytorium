@@ -1,0 +1,21 @@
+ALTER TABLE praca ADD FOREIGN KEY (promotor) REFERENCES promotor(PESEL);
+CREATE TABLE praca(promotor VARCHAR(50) NOT NULL,  nr_indeksu VARCHAR(6), tytul_pracy LONGTEXT, ocena ENUM('dst','dst_plus','db','db_plus','bdb') DEFAULT 'dst', CONSTRAINT pk_praca PRIMARY KEY(promotor,nr_indeksu));
+CONSTRAINT pk_praca PRIMARY KEY(promotor,nr_indeksu));
+ALTER TABLE promotor ALTER imie SET DEFAULT 'Jaroslaw';
+INSERT INTO promotor(imie) SELECT (imie) FROM pracownik WHERE id_pracownika = 5;
+UPDATE promotor SET tytul = 'mgr' WHERE imie = 'Jan';
+INSERT INTO promotor(nazwisko) SELECT (nazwisko) FROM pracownik WHERE id_pracownika = 5;
+UPDATE promotor SET PESEL = '11111111111' WHERE tytul = 'mgr';
+UPDATE promotor SET zarobki = zarobki*2 WHERE tytul = 'mgr';
+ALTER TABLE promotor DROP PRIMARY KEY;
+ALTER TABLE praca DROP CONSTRAINT praca_ibfk_1;
+ALTER TABLE promotor ADD IdPracownika INT NOT NULL PRIMARY KEY AUTO_INCREMENT;
+
+
+
+select concat(imie,' ',nazwisko) as 'zawodnik' from zawodnicy where wzrost>180 ORDER BY Dataur ASC;
+SELECT Nazwisko as 'nazwisko' FROM zawodnicy LEFT JOIN udzial ON zawodnicy.Idzaw = udzial.Idzaw WHERE udzial.Idzaw IS NULL;
+SELECT COUNT(Nazwa) AS 'Ilosc', Nazwa, Miasto FROM kluby INNER JOIN zawodnicy ON zawodnicy.IdKlubu = kluby.IdKlubu GROUP BY Nazwa,Miasto;
+SELECT COUNT(IdMeczu) AS 'ilosc',Imie,Nazwisko FROM udzial INNER JOIN zawodnicy ON zawodnicy.Idzaw = udzial.Idzaw GROUP BY Imie,Nazwisko LIMIT 1;
+
+
